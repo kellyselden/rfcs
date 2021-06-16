@@ -27,10 +27,12 @@ There have been reports that they are refusing requests for more open source cre
 
 ## Detailed design
 
-We will replace the .travis.yml with a .github/workflows/ci.yml.
+We will replace the .travis.yml with a `.github/workflows/ci.yml`.
 It will be configured as close as possible to the existing Travis CI setup.
 Unlike Travis CI, there is no enable or authorization step.
 The presence of a file in .github/workflows/ is automatically recognized and run if hosted on GitHub.
+
+Additionally, the `.github` folder will be added to addons' `.npmignore` file
 
 ## How we teach this
 
@@ -56,3 +58,6 @@ CircleCI and GitLab are other popular alternatives.
 Perhaps one would be better as a recommendation from us?
 
 We could also refrain from suggesting/including any CI config files.
+
+We could provide an ember-cli flag to choose what CI environment folks would like to use.
+But this would increase scope significantly, and further delay getting default CI working.
